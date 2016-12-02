@@ -6,6 +6,7 @@
   "dependencies": {
     "wemo-client": "latest",
     "diskspace": "latest",
+    "optimist": "latest",
     "winston": "latest"
   },
   "scripts": {
