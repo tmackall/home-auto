@@ -18,12 +18,12 @@ var readline = require('readline');
 //var google = require('../lib/googleapis.js');
 var google = require('googleapis');
 var OAuth2Client = google.auth.OAuth2;
-var plus = google.plus('v1');
+var drive = google.drive('v3');
 
 // Client ID and client secret are available at
 // https://code.google.com/apis/console
-var CLIENT_ID = '136694865106-ll1uu2l4he308trguse34aa9hndjsthe.apps.googleusercontent.com';
-var CLIENT_SECRET = '0wHL9yB0qfnZPkWTrF-SO8TX';
+var CLIENT_ID = '136694865106-meov8uvcocp0a60h4gsgb89oksf8lfn8.apps.googleusercontent.com';
+var CLIENT_SECRET = 'PlYesT4AfrO0Yr-iq-VkyeVe';
 var REDIRECT_URL = 'http://tmackall.com/oauth2callback/';
 
 var oauth2Client = new OAuth2Client(CLIENT_ID, CLIENT_SECRET, REDIRECT_URL);
@@ -37,7 +37,8 @@ function getAccessToken (oauth2Client, callback) {
   // generate consent page url
   var url = oauth2Client.generateAuthUrl({
     access_type: 'offline', // will return a refresh token
-    scope: 'https://www.googleapis.com/auth/plus.me' // can be a space-delimited string or an array of scopes
+    //scope: 'https://www.googleapis.com/auth/drive.me' // can be a space-delimited string or an array of scopes
+    scope: 'https://www.googleapis.com/auth/drive' // can be a space-delimited string or an array of scopes
   });
 
   console.log('Visit the url: ', url);
@@ -58,7 +59,7 @@ function getAccessToken (oauth2Client, callback) {
 // retrieve an access token
 getAccessToken(oauth2Client, function () {
   // retrieve user profile
-  plus.people.get({ userId: 'me', auth: oauth2Client }, function (err, profile) {
+  drive.people.get({ userId: 'me', auth: oauth2Client }, function (err, profile) {
     if (err) {
       return console.log('An error occured', err);
     }

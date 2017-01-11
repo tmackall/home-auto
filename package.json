@@ -4,9 +4,12 @@
   "description": "Home automation tools and servers.",
   "main": "index.js",
   "dependencies": {
-    "wemo-client": "latest",
+    "chai": "latest",
     "diskspace": "latest",
     "optimist": "latest",
+    "googleapis": "latest",
+    "google-auth-library": "latest",
+    "wemo-client": "latest",
     "winston": "latest"
   },
   "scripts": {
