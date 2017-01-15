@@ -1,0 +1,83 @@
+EventEmitter {
+  domain: null,
+  _events: { newListener: [Function] },
+  _eventsCount: 1,
+  _maxListeners: undefined,
+  host: '192.168.0.14',
+  port: '49153',
+  deviceType: 'urn:Belkin:device:insight:1',
+  UDN: 'uuid:Insight-1_0-221449K120082B',
+  subscriptions: {},
+  callbackURL: 'http://192.168.0.21:35694',
+  device: 
+   { deviceType: 'urn:Belkin:device:insight:1',
+     friendlyName: 'Lamp_lr',
+     manufacturer: 'Belkin International Inc.',
+     manufacturerURL: 'http://www.belkin.com',
+     modelDescription: 'Belkin Insight 1.0',
+     modelName: 'Insight',
+     modelNumber: '1.0',
+     modelURL: 'http://www.belkin.com/plugin/',
+     serialNumber: '221449K120082B',
+     UDN: 'uuid:Insight-1_0-221449K120082B',
+     UPC: '123456789',
+     macAddress: '94103E3E105C',
+     firmwareVersion: 'WeMo_WW_2.00.10885.PVT-OWRT-Insight',
+     iconVersion: '0|49153',
+     binaryState: '0',
+     iconList: { icon: [Object] },
+     serviceList: { service: [Object] },
+     presentationURL: '/pluginpres.html',
+     host: '192.168.0.14',
+     port: '49153',
+     callbackURL: 'http://192.168.0.21:35694' },
+  error: undefined,
+  services: 
+   { 'urn:Belkin:service:WiFiSetup:1': 
+      { serviceId: 'urn:Belkin:serviceId:WiFiSetup1',
+        controlURL: '/upnp/control/WiFiSetup1',
+        eventSubURL: '/upnp/event/WiFiSetup1' },
+     'urn:Belkin:service:timesync:1': 
+      { serviceId: 'urn:Belkin:serviceId:timesync1',
+        controlURL: '/upnp/control/timesync1',
+        eventSubURL: '/upnp/event/timesync1' },
+     'urn:Belkin:service:basicevent:1': 
+      { serviceId: 'urn:Belkin:serviceId:basicevent1',
+        controlURL: '/upnp/control/basicevent1',
+        eventSubURL: '/upnp/event/basicevent1' },
+     'urn:Belkin:service:firmwareupdate:1': 
+      { serviceId: 'urn:Belkin:serviceId:firmwareupdate1',
+        controlURL: '/upnp/control/firmwareupdate1',
+        eventSubURL: '/upnp/event/firmwareupdate1' },
+     'urn:Belkin:service:rules:1': 
+      { serviceId: 'urn:Belkin:serviceId:rules1',
+        controlURL: '/upnp/control/rules1',
+        eventSubURL: '/upnp/event/rules1' },
+     'urn:Belkin:service:metainfo:1': 
+      { serviceId: 'urn:Belkin:serviceId:metainfo1',
+        controlURL: '/upnp/control/metainfo1',
+        eventSubURL: '/upnp/event/metainfo1' },
+     'urn:Belkin:service:remoteaccess:1': 
+      { serviceId: 'urn:Belkin:serviceId:remoteaccess1',
+        controlURL: '/upnp/control/remoteaccess1',
+        eventSubURL: '/upnp/event/remoteaccess1' },
+     'urn:Belkin:service:deviceinfo:1': 
+      { serviceId: 'urn:Belkin:serviceId:deviceinfo1',
+        controlURL: '/upnp/control/deviceinfo1',
+        eventSubURL: '/upnp/event/deviceinfo1' },
+     'urn:Belkin:service:insight:1': 
+      { serviceId: 'urn:Belkin:serviceId:insight1',
+        controlURL: '/upnp/control/insight1',
+        eventSubURL: '/upnp/event/insight1' },
+     'urn:Belkin:service:smartsetup:1': 
+      { serviceId: 'urn:Belkin:serviceId:smartsetup1',
+        controlURL: '/upnp/control/smartsetup1',
+        eventSubURL: '/upnp/event/smartsetup1' },
+     'urn:Belkin:service:manufacture:1': 
+      { serviceId: 'urn:Belkin:serviceId:manufacture1',
+        controlURL: '/upnp/control/manufacture1',
+        eventSubURL: '/upnp/event/manufacture1' } } }
+{ '$': { 'xmlns:u': 'urn:Belkin:service:basicevent:1' },
+  BinaryState: '8|1484492111|0|0|0|1209600|0|0|275240|275240',
+  CountdownEndTime: '0',
+  deviceCurrentTime: '1484492184' }

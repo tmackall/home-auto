@@ -47,10 +47,12 @@ function getClient(callback) {
 }
 let client = null;
 let argv = require('optimist')
-  .usage('Turns wemo on and off.\nUsage: $0 <-o> (default is on) <-i (island) || -l (lamp)>')
+  .usage('Turns wemo on and off.\nUsage: $0 <-o> (default is on) <-i (island) || -l (lamp)> -t <timer>')
+  .default('t', 0)
   .boolean('o', 'l', 'i', 'a')
   .argv
 ;
+let timer = argv.t;
 let off = argv.o;
 let fIsland = argv.i;
 let fLamp = argv.l;
@@ -58,42 +60,26 @@ let state = STATE.on;
 if (off) {
   state = STATE.off;
 }
-
-let cnt = 0;
-
-if (fLamp) {
-  loadDevice(devices.lamp, function(client) {
-    client.setBinaryState(state, function(err, res) {
-      console.log(res);
-      process.exit(0);
-    });
-  });
-} else {
-  loadDevice(devices.island, function(client) {
-    client.setBinaryState(state, function(err, res) {
-      console.log(res);
-      process.exit(0);
-    });
-  });
+if (typeof timer != 'number') {
+  console.warn('time is not a num, set to zero');
+  timer = 0;
 }
 
-
-/*
-getDevices(function(res) {
-  console.log(res);
-  lDevices.push(res);
-  return;
-});
-//console.log(lDevices.length);
-/*
-getClient(function(err, res) {  
-  client = res;
-  if (off === true) {
-    state = 0;
-  }
-  client.setBinaryState(state, function(err) {
-    if (err) logger.error(err), process.exit(3);
-    process.exit(0);
-  });
-});
-*/
+if (!module.parent) {
+  let cnt = 0;
+  
+  let device = devices.lamp;
+  if (fIsland) {
+    device = devices.island;
+  } 
+  setTimeout(function() {
+    loadDevice(device, function(client) {
+      client.setBinaryState(state, function(err, res) {
+        console.log(res);
+        process.exit(0);
+      });
+    });
+  }, timer * 1000);
+} else {
+  console.log(module.parent);
+}
